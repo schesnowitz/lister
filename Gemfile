@@ -13,6 +13,7 @@ gem 'simple_form', '~> 3.2', '>= 3.2.1' # https://rubygems.org/gems/simple_form/
 gem 'bootstrap-sass', '~> 3.3', '>= 3.3.6' # https://rubygems.org/gems/bootstrap-sass
 gem 'bootstrap-sass-extras', '~> 0.0.2' # https://rubygems.org/gems/bootstrap-sass-extras/versions/0.0.2
 gem 'devise', '~> 4.1', '>= 4.1.1' #https://rubygems.org/gems/devise/versions/4.1.1
+gem 'font-awesome-rails', '~> 4.6', '>= 4.6.3.0'
 
 
 
