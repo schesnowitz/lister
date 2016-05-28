@@ -1,4 +1,5 @@
 class RestaurantsController < ApplicationController
+  before_action :authenticate_user!, only: [:new, :create] 
   
   def index
   end
@@ -8,12 +9,19 @@ class RestaurantsController < ApplicationController
   end
   
   def create
+    @user = current_user
     @restaurant = Restaurant.new(restaurant_params)
-    @restaurant.save
+    if @restaurant.save
     redirect_to @restaurant
+    flash[:success] = "Great News! #{@user.username} your review has been saved."
+  else
+    flash[:error] = "Sorry #{@user.username}, see the errors below and re submit" 
+    render :new
+  end
   end
   
   def show
+    @restaurant = Restaurant.find(params[:id])
   end
   
   
@@ -21,7 +29,7 @@ class RestaurantsController < ApplicationController
   
   def restaurant_params
     params.require(:restaurant).permit(:name, :description, :address1, :address2,
-    :city, :state_provence, :postalcode, :phone, :email)
+    :city, :state_provence, :postalcode, :phone, :email, :category_id)
   end
 end
 
