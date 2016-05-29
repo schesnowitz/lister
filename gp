@@ -1,5 +1,5 @@
 git add -A
-git commit -m "restaurant user flash"
+git commit -m "review section"
 git push -u origin master
 git push heroku master
 
