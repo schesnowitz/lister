@@ -1,48 +1,3 @@
-Download copy of application: https://github.com/schesnowitz/lister/ 
-Then un zip and copy images into assets/images
-
-1.  in views/layouts/_script 
-
-<script>
-    $('.star-rating').raty({
-      path: '/assets/',
-      readOnly: true,
-      score: function() {
-      return $(this).attr('data-score');
-    }
-  });
-</script>
-
-2. in javascripts create file jquery.raty.js
-
-3. paste code below into jquery.raty.js
-
-3.   inlcude this line in application.js  //= require jquery.raty.js
-
-2.  controllers/restaurant_controller
-
-  def show
-    @restaurant = Restaurant.find(params[:id])
-    @reviews = Review.where(restaurant_id: @restaurant) 
-    if @reviews.blank?
-      @average_rating = 0
-    else
-      @average_rating = @reviews.average(:rating).round(2)
-    end
-  end 
-
-3.  views/reviews/new
-
-<%= f.number_input :rating, value: 1, min: 1, max: 5 %>
-
-4. views/restaurants/show
-
-<span class="star-rating" data-score=<%= @average_rating %>></span>
-
-
-
-jquery.raty.js code 
-
 /*!
  * jQuery Raty - A Star Rating Plugin
  *
@@ -803,4 +758,3 @@ jquery.raty.js code
   };
 
 })(jQuery);
-                  
