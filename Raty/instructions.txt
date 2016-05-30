@@ -1,3 +1,5 @@
+1.  in views/layouts/_script 
+
 <script>
     $('.star-rating').raty({
       path: '/assets/',
@@ -8,6 +10,7 @@
   });
 </script>
 
+2.  controllers/restaurant_controller
 
   def show
     @restaurant = Restaurant.find(params[:id])
@@ -19,7 +22,11 @@
     end
   end 
 
+3.  views/reviews/new
+
 <%= f.input :rating, value: 1, min: 1, max: 5 %>
+
+4. views/restaurants/show
 
 <span class="star-rating" data-score=<%= @average_rating %>>
                   
