@@ -1,3 +1,5 @@
+grab files from https://github.com/schesnowitz/lister/tree/master/Raty
+
 1.  in views/layouts/_script 
 
 <script>
