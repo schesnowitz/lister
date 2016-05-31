@@ -1,0 +1,177 @@
+    <!--http://templateninja.net/themes/arillo/v1.1/green/single.html-->
+    <!-- begin:content -->
+    <div id="content">
+      <div class="container">
+        <div class="row">
+          <!-- begin:article -->
+          <div class="col-md-9 col-md-push-3">
+            <div class="row">
+              <div class="col-md-12 single-post">
+
+
+<div id="myTabContent" class="tab-content">
+  <div class="tab-pane fade in active" id="detail">
+    <div class="row">
+      <div class="col-md-12">
+        <h2><%= @restaurant.name %></h2>
+        <p>
+        <% if @reviews.blank? %>
+          This establishment has no reviews.  Be the first to share your dining experience!
+        <% else %>
+          <%= @restaurant.name %> has an average rating of
+          (<%= @average_rating %>) stars
+          <span class="star-rating" data-score=<%= @average_rating %>></span>
+          and has been reviewed by <%= @reviews.count %> <%= "client".pluralize@reviews.count %>
+        <% end %>
+        </p>
+        <div id="slider-property" class="carousel slide" data-ride="carousel">
+          <ol class="carousel-indicators">
+            <li data-target="#slider-property" data-slide-to="0" class="">
+              <img src="img/img02.jpg" alt="">
+            </li>
+            <li data-target="#slider-property" data-slide-to="1" class="active">
+              <img src="img/img03.jpg" alt="">
+            </li>
+            <li data-target="#slider-property" data-slide-to="2">
+              <img src="img/img04.jpg" alt="">
+            </li>
+          </ol>
+          <div class="carousel-inner">
+            <div class="item">
+              <img src="img/img02.jpg" alt="">
+            </div>
+            <div class="item active">
+              <img src="img/img03.jpg" alt="">
+            </div>
+            <div class="item">
+              <img src="img/img04.jpg" alt="">
+            </div>
+          </div>
+          <a class="left carousel-control" href="#slider-property" data-slide="prev">
+            <span class="glyphicon glyphicon-chevron-left"></span>
+          </a>
+          <a class="right carousel-control" href="#slider-property" data-slide="next">
+            <span class="glyphicon glyphicon-chevron-right"></span>
+          </a>
+        </div>
+<h3 class="text-muted">Restaurant Overview</h3>
+<table class="table table-bordered">
+<tr>
+  <td><strong>Restaurant Name</strong></td>
+  <td><%= @restaurant.name %></td>
+</tr>
+<tr>
+  <td><strong>Website</strong></td>
+  <td><%= @restaurant.email %></td>
+</tr>
+<tr>
+  <td><strong>Address</strong></td>
+  <td><%= @restaurant.address1 %><span><%= @restaurant.address2 %></span></td>
+</tr>
+<tr>
+  <td><strong>City | State/Provence |<br /> Postal Code </strong></td>
+  <td><%= @restaurant.city %> | 
+    <span>
+      <%= @restaurant.state_provence %> |
+    </span>
+    <span>
+    <%= @restaurant.postalcode %>
+    </span>
+  </td>
+</tr>
+<tr>
+  <td><strong>Telephone</strong></td>
+  <td><%= @restaurant.phone %></td>
+</tr>
+</table>
+<h3></h3>
+<div class="row">
+
+
+                         
+</div>
+
+<h3>More About <%= @restaurant.name %></h3>
+<p><%= @restaurant.description %></p>
+</div>
+</div>
+
+                    
+                  </div>
+                  map section<!-- break -->
+<div class="tab-pane fade" id="location">
+  <div class="row">
+    <div class="col-md-12">
+      <div id="map-property"></div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-12">
+      <h3>Contact Agent</h3>
+    </div>
+  </div>
+
+</div>
+</div>
+</div>
+</div>
+</div>
+          <!-- end:article -->
+
+          <!-- begin:sidebar -->
+          <div class="col-md-3 col-md-pull-9 sidebar">
+            <div class="widget-white favorite">
+              <a href="#"><i class="fa fa-heart"></i> Add to favorite</a>
+            </div>
+            <!-- break -->
+            <div class="widget widget-sidebar widget-white">
+              <div class="widget-header">
+                <h3>Restaurant Reviews</h3>
+            </div>
+           
+            <!-- break -->
+<div class="widget widget-sidebar widget-white">
+
+ <% @reviews.each do |review| %>
+   <span class="star-rating" data-score=<%= review.rating %>></span><br />
+     <%= review.comment %> 
+     
+ <blockquote class="blockquote">
+    <p class="m-b-0"></p>
+      <footer class="blockquote-footer pull-right">
+        <cite><%= review.user.username %></cite>
+        </footer>
+</blockquote>
+<hr>
+<% end %>
+
+</div>
+            <%= link_to "Create Review", 
+                new_restaurant_review_path(@restaurant), class: "btn btn-info" %>
+          </div>
+          <!-- end:sidebar -->
+          
+        </div>
+      </div>
+    </div>
+    <!-- end:content -->
+
+
+
+
+<!-- begin:blog -->
+
+
+</div>
+          <!-- break -->
+
+        </div>
+      </div>
+      <!-- break -->
+
+    </div>
+    <!-- end:agent -->
+  </div>
+</div>
+</div>
+
