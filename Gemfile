@@ -14,6 +14,8 @@ gem 'bootstrap-sass', '~> 3.3', '>= 3.3.6' # https://rubygems.org/gems/bootstrap
 gem 'bootstrap-sass-extras', '~> 0.0.2' # https://rubygems.org/gems/bootstrap-sass-extras/versions/0.0.2
 gem 'devise', '~> 4.1', '>= 4.1.1' #https://rubygems.org/gems/devise/versions/4.1.1
 gem 'font-awesome-rails', '~> 4.6', '>= 4.6.3.0'
+gem 'geocoder', '~> 1.3', '>= 1.3.5' #https://rubygems.org/gems/geocoder/versions/1.3.5
+#rails generate migration AddLatitudeAndLongitudeToRestaurant latitude:float longitude:float
 
 
 

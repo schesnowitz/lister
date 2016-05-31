@@ -1,4 +1,4 @@
 git add -A
-git commit -m "JQ-Raty"
-git push origin JQ-Raty
+git commit -m "geo set up"
+git push origin geo
 
