@@ -1,8 +1,8 @@
 body {
   padding-top: 70px;
   padding-bottom: 30px;
-  
-}
+  overflow-x: hidden;
+ }
 
 .theme-dropdown .dropdown-menu {
   display: block;

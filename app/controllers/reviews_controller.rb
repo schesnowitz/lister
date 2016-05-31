@@ -10,10 +10,16 @@ class ReviewsController < ApplicationController
   end
   
   def create
+    @user = current_user
     @review = current_user.reviews.build(review_params)
     @review.restaurant = @restaurant
-    @review.save
-    redirect_to @restaurant
+      if @review.save
+       flash[:success] = "Thanks #{@user.username}, Your review has been added"
+      redirect_to @restaurant
+      else
+        flash[:error] = "Oops #{@user.username}, there seems to be a problem"
+        render :new
+    end
   end
   
     private
