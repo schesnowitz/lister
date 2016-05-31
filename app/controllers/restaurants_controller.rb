@@ -30,7 +30,6 @@ class RestaurantsController < ApplicationController
     end
   end  
   
-  
   private
   
   def restaurant_params

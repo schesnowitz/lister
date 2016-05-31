@@ -1,5 +1,5 @@
 git add -A
-git commit -m "geo merge"
+git commit -m "seeds"
 git push -u origin master
 
 
