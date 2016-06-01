@@ -16,6 +16,7 @@ gem 'devise', '~> 4.1', '>= 4.1.1' #https://rubygems.org/gems/devise/versions/4.
 gem 'font-awesome-rails', '~> 4.6', '>= 4.6.3.0'
 gem 'geocoder', '~> 1.3', '>= 1.3.5' #https://rubygems.org/gems/geocoder/versions/1.3.5
 #rails generate migration AddLatitudeAndLongitudeToRestaurant latitude:float longitude:float
+gem 'carrierwave', '~> 0.11.2'
 
 
 

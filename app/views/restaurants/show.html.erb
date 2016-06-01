@@ -27,7 +27,9 @@
         <div id="slider-property" class="carousel slide" data-ride="carousel">
           <ol class="carousel-indicators">
             <li data-target="#slider-property" data-slide-to="0" class="">
-              <img src="img/img02.jpg" alt="">
+              <% if @restaurant.image_url.present? %>
+              <%= image_tag @restaurant.image_url  %>
+              <% end %>
             </li>
             <li data-target="#slider-property" data-slide-to="1" class="active">
               <img src="img/img03.jpg" alt="">
