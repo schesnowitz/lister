@@ -35,6 +35,12 @@ class ImageUploader < CarrierWave::Uploader::Base
   version :search_page do
     process :resize_to_fit => [200, 300]
   end
+  
+  version :restaurant_show do
+    process :resize_to_fit => [900, 800]
+  end
+  
+
 
   # Add a white list of extensions which are allowed to be uploaded.
   # For images you might use something like this:

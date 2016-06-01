@@ -1,5 +1,5 @@
 git add -A
-git commit -m "testing image on heroku no storage"
+git commit -m "Carrierwave"
 git push -u origin master
 git push heroku master
 

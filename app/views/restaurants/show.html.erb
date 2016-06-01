@@ -1,5 +1,36 @@
     <!--http://templateninja.net/themes/arillo/v1.1/green/single.html-->
     <!-- begin:content -->
+<div class="breadcrumbs">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-4 col-sm-4">
+                <h1><%= @restaurant.name %></h1> 
+            </div>
+            <div class="col-lg-8 col-sm-8">
+                <ol class="breadcrumb pull-right">
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">Portfolio</a></li>
+                    <li class="active">Portfolio single</li>
+                </ol>
+            </div>
+        </div>
+    </div>
+</div>    
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="pf-img text-center">
+              <% if @restaurant.image_url.present? %>
+              <%= image_tag @restaurant.image_url(:restaurant_show) %>
+              <% end %>
+             </div>
+
+        </div>
+    </div>
+</div>
+    
+    
     <div id="content">
       <div class="container">
         <div class="row">
@@ -13,7 +44,7 @@
   <div class="tab-pane fade in active" id="detail">
     <div class="row">
       <div class="col-md-12">
-        <h2><%= @restaurant.name %></h2>
+        <h2></h2>
         <p>
         <% if @reviews.blank? %>
           This establishment has no reviews.  Be the first to share your dining experience!
@@ -23,39 +54,8 @@
           <span class="star-rating" data-score=<%= @average_rating %>></span>
           and has been reviewed by <%= @reviews.count %> <%= "client".pluralize@reviews.count %>
         <% end %>
-        </p>
-        <div id="slider-property" class="carousel slide" data-ride="carousel">
-          <ol class="carousel-indicators">
-            <li data-target="#slider-property" data-slide-to="0" class="">
-              <% if @restaurant.image_url.present? %>
-              <%= image_tag @restaurant.image_url  %>
-              <% end %>
-            </li>
-            <li data-target="#slider-property" data-slide-to="1" class="active">
-              <img src="img/img03.jpg" alt="">
-            </li>
-            <li data-target="#slider-property" data-slide-to="2">
-              <img src="img/img04.jpg" alt="">
-            </li>
-          </ol>
-          <div class="carousel-inner">
-            <div class="item">
-              <img src="img/img02.jpg" alt="">
-            </div>
-            <div class="item active">
-              <img src="img/img03.jpg" alt="">
-            </div>
-            <div class="item">
-              <img src="img/img04.jpg" alt="">
-            </div>
-          </div>
-          <a class="left carousel-control" href="#slider-property" data-slide="prev">
-            <span class="glyphicon glyphicon-chevron-left"></span>
-          </a>
-          <a class="right carousel-control" href="#slider-property" data-slide="next">
-            <span class="glyphicon glyphicon-chevron-right"></span>
-          </a>
-        </div>
+
+      
 <h3 class="text-muted">Restaurant Overview</h3>
 <table class="table table-bordered">
 <tr>
@@ -72,9 +72,9 @@
 </tr>
 <tr>
   <td><strong>City | State/Provence |<br /> Postal Code </strong></td>
-  <td><%= @restaurant.city %> | 
+  <td><%= @restaurant.city.capitalize %> | 
     <span>
-      <%= @restaurant.state_provence %> |
+      <%= @restaurant.state_provence.upcase %> |
     </span>
     <span>
     <%= @restaurant.postalcode %>
