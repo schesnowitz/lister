@@ -5,7 +5,7 @@
     <div class="col-md-3">
       <a href="#">
          <% if r.image_url.present? %>
-              <%= image_tag r.image_url  %>
+              <%= image_tag r.image_url(:search_page)  %>
               <% end %>
       </a>
       <h3>

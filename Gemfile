@@ -17,6 +17,7 @@ gem 'font-awesome-rails', '~> 4.6', '>= 4.6.3.0'
 gem 'geocoder', '~> 1.3', '>= 1.3.5' #https://rubygems.org/gems/geocoder/versions/1.3.5
 #rails generate migration AddLatitudeAndLongitudeToRestaurant latitude:float longitude:float
 gem 'carrierwave', '~> 0.11.2'
+gem 'mini_magick', '~> 4.5', '>= 4.5.1' #https://rubygems.org/gems/mini_magick/versions/4.5.1
 
 
 
