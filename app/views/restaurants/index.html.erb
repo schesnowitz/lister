@@ -28,8 +28,11 @@
   </div>
 </div>
 
+
 <!--breadcrumbs end-->
-  <%= link_to "Create a Restaurant Review", new_restaurant_path, class: "btn btn-success" %>
+<%= render "restaurants/slider" %> 
+
+<%= link_to "Create a Restaurant Review", new_restaurant_path, class: "btn btn-success" %>
 <%= form_tag search_restaurants_path, method: :get do |f| %>
 <%= text_field_tag :search, nil, placeholder: "What do you wanna eat?" %>
 <%= text_field_tag :location, nil, placeholder: "What city?" %>

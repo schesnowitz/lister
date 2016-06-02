@@ -23,6 +23,8 @@
             <div class="pf-img text-center">
               <% if @restaurant.image_url.present? %>
               <%= image_tag @restaurant.image_url(:restaurant_show) %>
+              <% else %>
+              <%= image_tag "restaurant_show_dummy.JPG" %>
               <% end %>
              </div>
 
@@ -72,7 +74,7 @@
 </tr>
 <tr>
   <td><strong>City | State/Provence |<br /> Postal Code </strong></td>
-  <td><%= @restaurant.city.capitalize %> | 
+  <td><%= @restaurant.city.titleize %> | 
     <span>
       <%= @restaurant.state_provence.upcase %> |
     </span>

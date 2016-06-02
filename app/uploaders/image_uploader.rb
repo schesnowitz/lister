@@ -37,7 +37,7 @@ class ImageUploader < CarrierWave::Uploader::Base
   end
   
   version :restaurant_show do
-    process :resize_to_fit => [900, 800]
+    process :resize_to_fit => [900, 500]
   end
   
 

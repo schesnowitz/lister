@@ -1,4 +1,4 @@
 git add -A
-git commit -m "geo set up"
-git push origin geo
+git commit -m "completed idex slider"
+git push origin slide
 

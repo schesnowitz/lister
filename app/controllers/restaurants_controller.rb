@@ -2,6 +2,7 @@ class RestaurantsController < ApplicationController
   before_action :authenticate_user!, only: [:new, :create] 
   
   def index
+    @restaurants = Restaurant.all
   end
   
   def new
