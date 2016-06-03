@@ -30,6 +30,8 @@
 
 
 <!--breadcrumbs end-->
+
+<div class='container'>
 <%= render "restaurants/slider" %> 
 
 <%= link_to "Create a Restaurant Review", new_restaurant_path, class: "btn btn-success" %>
@@ -40,4 +42,8 @@
     options_for_select(Category.all.map{ |category| [category.name, category.id]}) %>
 <%= submit_tag 'Search', class: "btn btn-info" %>
 <% end %>
-</div>
+
+
+<%= render "restaurants/categories" %>
+
+</div>  <!--container end-->
