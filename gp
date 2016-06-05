@@ -1,5 +1,6 @@
 git add -A
 git commit -m "added lat long and city to user table"
-git push -f origin master
+git push  origin master
+git push heroku master
 
 
