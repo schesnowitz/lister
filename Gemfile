@@ -18,7 +18,7 @@ gem 'geocoder', '~> 1.3', '>= 1.3.5' #https://rubygems.org/gems/geocoder/version
 #rails generate migration AddLatitudeAndLongitudeToRestaurant latitude:float longitude:float
 gem 'carrierwave', '~> 0.11.2'
 gem 'mini_magick', '~> 4.5', '>= 4.5.1' #https://rubygems.org/gems/mini_magick/versions/4.5.1
-
+gem 'fog', '~> 1.38'
 
 
 
@@ -40,6 +40,7 @@ group :development do
   gem 'web-console'
   gem 'listen', '~> 3.0.5'
   gem 'sqlite3'
+  gem "figaro"
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'

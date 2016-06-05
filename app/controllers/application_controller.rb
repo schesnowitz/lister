@@ -14,7 +14,8 @@ class ApplicationController < ActionController::Base
                                                           :last_name,
                                                           :latitude,
                                                           :longitude,
-                                                          :city
+                                                          :city,
+                                                          :state_provence
                                                           ) 
                                                           }
   devise_parameter_sanitizer.for(:account_update) { |u| u.permit(
@@ -27,7 +28,8 @@ class ApplicationController < ActionController::Base
                                                           :last_name,
                                                           :latitude,
                                                           :longitude,
-                                                          :city
+                                                          :city,
+                                                          :state_provence
                                                           ) 
                                                           }  
   end

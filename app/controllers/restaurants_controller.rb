@@ -2,16 +2,17 @@ class RestaurantsController < ApplicationController
   before_action :authenticate_user!, only: [:new, :create] 
   
   def index
+    @user = current_user
     
     # visitor_latitude = request.location.latitude
     # visitor_longitude = request.location.longitude 
     
 
-    visitor_latitude = 42.8864470
-    visitor_longitude = -78.8783690
+    visitor_latitude = @user.latitude
+    visitor_longitude = @user.longitude
     
-     @vlat = visitor_latitude
-     @vlon = visitor_longitude
+     @vlat = @user.latitude
+     @vlon = @user.longitude
     
     @restaurants = Restaurant.near([visitor_latitude, visitor_longitude], 200)
     @fast_food_restaurants = Restaurant.where(category_id: 1).near([visitor_latitude, visitor_longitude], 200)
