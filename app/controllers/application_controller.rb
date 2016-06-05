@@ -12,7 +12,9 @@ class ApplicationController < ActionController::Base
                                                           :username,
                                                           :first_name,
                                                           :last_name,
-                                                          :terms
+                                                          :latitude,
+                                                          :longitude,
+                                                          :city
                                                           ) 
                                                           }
   devise_parameter_sanitizer.for(:account_update) { |u| u.permit(
@@ -23,8 +25,11 @@ class ApplicationController < ActionController::Base
                                                           :username,
                                                           :first_name,
                                                           :last_name,
-                                                          :terms
+                                                          :latitude,
+                                                          :longitude,
+                                                          :city
                                                           ) 
                                                           }  
   end
 end
+ 

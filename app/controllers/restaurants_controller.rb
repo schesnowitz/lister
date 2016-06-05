@@ -3,14 +3,15 @@ class RestaurantsController < ApplicationController
   
   def index
     
-    visitor_latitude = request.location.latitude
-    visitor_longitude = request.location.longitude 
+    # visitor_latitude = request.location.latitude
+    # visitor_longitude = request.location.longitude 
     
 
-    # visitor_latitude = 42.8864470
-    # visitor_longitude = -78.8783690
+    visitor_latitude = 42.8864470
+    visitor_longitude = -78.8783690
     
-     
+     @vlat = visitor_latitude
+     @vlon = visitor_longitude
     
     @restaurants = Restaurant.near([visitor_latitude, visitor_longitude], 200)
     @fast_food_restaurants = Restaurant.where(category_id: 1).near([visitor_latitude, visitor_longitude], 200)
