@@ -145,7 +145,7 @@
 
   //google map
   function initialize() {
-    var myLatlng = new google.maps.LatLng(<%= @vlat %>,<%= @vlon %>);
+    var myLatlng = new google.maps.LatLng(<%= @vlat if current_user %>,<%= @vlon if current_user %>);
     var mapOptions = {
       zoom: 10,
       center: myLatlng,

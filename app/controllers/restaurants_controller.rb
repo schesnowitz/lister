@@ -2,7 +2,8 @@ class RestaurantsController < ApplicationController
   before_action :authenticate_user!, only: [:new, :create] 
   
   def index
-    @user = current_user
+    if current_user
+    @user = current_user 
     
     # visitor_latitude = request.location.latitude
     # visitor_longitude = request.location.longitude 
@@ -10,9 +11,11 @@ class RestaurantsController < ApplicationController
 
     visitor_latitude = @user.latitude
     visitor_longitude = @user.longitude
+  
     
      @vlat = @user.latitude
      @vlon = @user.longitude
+     
     
     @restaurants = Restaurant.near([visitor_latitude, visitor_longitude], 200)
     @fast_food_restaurants = Restaurant.where(category_id: 1).near([visitor_latitude, visitor_longitude], 200)
@@ -27,6 +30,9 @@ class RestaurantsController < ApplicationController
     @family_search = Category.find(5)
     @coffee_restaurants = Restaurant.where(category_id: 6).near([visitor_latitude, visitor_longitude], 200)
     @coffee_search = Category.find(6)
+    else
+      redirect_to pages_contact_path
+    end
   end
   
 
