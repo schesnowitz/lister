@@ -33,7 +33,7 @@ class ImageUploader < CarrierWave::Uploader::Base
 
   # Create different versions of your uploaded files:
   version :search_page do
-    process :resize_to_fit => [200, 300]
+    process :resize_to_fit => [200, 200]
   end
   
   version :restaurant_show do
