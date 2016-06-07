@@ -1,5 +1,5 @@
 git add -A
-git commit -m "Turbo is turned off"
+git commit -m "updated seeds"
 git push  origin master
 git push heroku master
 
