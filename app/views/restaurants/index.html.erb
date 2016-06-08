@@ -3,24 +3,13 @@
     <div class="row">
       <div class="col-lg-4 col-sm-4">
         <h1>
-          Restaurants
+          Welcome To Lister
         </h1>
       </div>
       <div class="col-lg-8 col-sm-8">
         <ol class="breadcrumb pull-right">
           <li>
-            <a href="#">
-              Home
-            </a>
-          </li>
-          <li>
-            <%= link_to "Home", root_path %>
-            <a href="#">
-              Pages
-            </a>
-          </li>
-          <li class="active">
-            About
+            <%= link_to "Add A Restaurant", new_restaurant_path %>
           </li>
         </ol>
       </div>
@@ -32,17 +21,26 @@
 <!--breadcrumbs end-->
 
 <div class='container'>
+  <div class="row">
+    <div class="col-md-9">
 <%= render "restaurants/slider" %>  
+</div>
+    <div class="col-md-3">
+<h3>Search Lister<br /><small> For The Best Places To Eat!</small></h3><hr>
+    <%= form_tag search_restaurants_path, method: :get do |f| %>
+    <div style="padding-bottom: 10px;">
+    <%= text_field_tag :search, nil, placeholder: "What do you wanna eat?" %>
+    </div>
+    <div style="padding-bottom: 10px;">
+    <%= text_field_tag :location, nil, placeholder: "What city?" %>
+    </div>
+    <%= select_tag :category, 
+        options_for_select(Category.all.map{ |category| [category.name, category.id]}) %>
+    <%= submit_tag 'Search', class: "btn btn-info" %>
+    <% end %>
 
-<%= link_to "Create a Restaurant Review", new_restaurant_path, class: "btn btn-success" %>
-<%= form_tag search_restaurants_path, method: :get do |f| %>
-<%= text_field_tag :search, nil, placeholder: "What do you wanna eat?" %>
-<%= text_field_tag :location, nil, placeholder: "What city?" %>
-<%= select_tag :category, 
-    options_for_select(Category.all.map{ |category| [category.name, category.id]}) %>
-<%= submit_tag 'Search', class: "btn btn-info" %>
-<% end %>
-
+  </div>
+</div>
 
 <%= render "restaurants/categories"%>   
 
