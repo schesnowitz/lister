@@ -1,4 +1,4 @@
 git add -A
-git commit -m "tempmaster"
-git push origin tempmaster
+git commit -m "pages-template"
+git push origin pages-template
 
