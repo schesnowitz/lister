@@ -5,7 +5,7 @@
     <div class="row">
       <div class="col-lg-4 col-sm-4">
         <h1>
-          Contacts
+          <%= @page.page_name %>
         </h1>
       </div>
       <!--<div class="col-lg-8 col-sm-8">-->
@@ -35,44 +35,23 @@
     <div class="col-lg-5 col-sm-5 address">
       <section class="contact-infos">
         <h4 class="title custom-font text-black">
-          ADDRESS
+          <%= @page.string_1 %>
         </h4>
         <address>
-          Revox
-          Crossraid, 85/B Cross Street,
-          <br>
-            New York, USA
-            <br>
-              NA1 42SL
+         <%= @page.text_1 %>
             </address>
           </section>
           <section class="contact-infos">
             <h4 class="title custom-font text-black">
-              BUSINESS HOURS
+              <%= @page.string_10 %>
             </h4>
-            <p>
-              Monday - Friday 8am to 4pm
-              <br>
-                Saturday - 7am to 6pm
-                <br>
-                  Sunday- Closed
-                  <br>
-                  </p>
+            <%= @page.text_2 %>
                 </section>
                 <section class="contact-infos">
                   <h4>
-                    TELEPHONE
+                    <%= @page.string_2 %>
                   </h4>
-                  <p>
-                    <i class="icon-phone">
-                    </i>
-                    +088-01234567890
-                  </p>
-                  <p>
-                    <i class="icon-phone">
-                    </i>
-                    +088-01234567890
-                  </p>
+                  <%= @page.text_3 %>
                 </section>
               </div>
               <div class="col-lg-7 col-sm-7 address">
@@ -125,7 +104,7 @@
                   <div class="row">
                     <div class='col-md-offset-2 col-md-8 text-center'>
                       <h2>
-                        Responsive Quote Carousel BS3
+                        <%= @page.string_3 %>
                       </h2>
                     </div>
                   </div>
@@ -149,13 +128,14 @@
                               <div class="row">
                                 <div class="col-sm-3 text-center">
                                   <img class="img-circle" src="img/person_1.png" style="width: 100px;height:100px;" alt="">
+                                  <%= @page.image_1 %>
                                 </div>
                                 <div class="col-sm-9">
                                   <p>
-                                    Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit!
+                                    <%= @page.string_4 %>
                                   </p>
                                   <small>
-                                    Someone famous
+                                    <%= @page.string_5 %>
                                   </small>
                                 </div>
                               </div>
@@ -167,13 +147,14 @@
                               <div class="row">
                                 <div class="col-sm-3 text-center">
                                   <img class="img-circle" src="img/person_2.png" style="width: 100px;height:100px;" alt="">
+                                  <%= @page.image_2 %>
                                 </div>
                                 <div class="col-sm-9">
                                   <p>
-                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam auctor nec lacus ut tempor. Mauris.
+                                   <%= @page.string_6 %>
                                   </p>
                                   <small>
-                                    Someone famous
+                                    <%= @page.string_7 %>
                                   </small>
                                 </div>
                               </div>
@@ -185,13 +166,14 @@
                               <div class="row">
                                 <div class="col-sm-3 text-center">
                                   <img class="img-circle" src="img/person_3.png" style="width: 100px;height:100px;" alt="">
+                                  <%= @page.image_3 %>
                                 </div>
                                 <div class="col-sm-9">
                                   <p>
-                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam auctor nec lacus ut tempor. Mauris.
+                                    <%= @page.string_8 %>
                                   </p>
                                   <small>
-                                    Someone famous
+                                    <%= @page.string_9 %>
                                   </small>
                                 </div>
                               </div>
