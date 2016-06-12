@@ -10,6 +10,9 @@ class PagesController < ApplicationController
   end
   
   def about
+    @restaurant_1 = Restaurant.find(1)
+    @restaurant_2 = Restaurant.find(4)
+    @restaurant_3 = Restaurant.find(3)
     @page = Page.find(2)
   end
   

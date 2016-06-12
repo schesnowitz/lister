@@ -40,26 +40,26 @@
           <!-- Carousel items -->
           <div class="carousel-inner">
             <div class="active item">
-              <img src="img/service3.jpg" alt="">
+              <img src="<%= @restaurant_1.image_url(:search_page) %>" alt="">
               <div class="carousel-caption">
                 <p>
-                  Lorem ipsum dolor sit amet.
+                  Destictive Quality
                 </p>
               </div>
             </div>
             <div class="item">
-              <img src="img/service2.jpg" alt="">
+              <img src="<%= @restaurant_2.image_url(:search_page) %>" alt="">
               <div class="carousel-caption">
                 <p>
-                  Blanditiis praesentium voluptatum
+                  Forever Delicious
                 </p>
               </div>
             </div>
             <div class="item">
-              <img src="img/service5.jpg" alt="">
+              <img src="<%= @restaurant_3.image_url(:search_page) %>" alt="">
               <div class="carousel-caption">
                 <p>
-                  Blanditiis praesentium voluptatum
+                  Always Appetizing
                 </p>
               </div>
             </div>
@@ -236,6 +236,7 @@
                 <i class="fa fa-github">
                 </i>
               </a>
+            </div>
           </div>
         </div>
       </div>
