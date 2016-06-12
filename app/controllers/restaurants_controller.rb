@@ -1,5 +1,5 @@
 class RestaurantsController < ApplicationController
-  before_action :admin?, only: [:edit, :update, :destroy]
+  before_action :admin?, only: [:edit, :update, :destroy,]
   before_action :set_user, only: [:index, :create, :update, :destroy]
   before_action :set_the_id, only: [:show, :edit, :update, :destroy]
   before_action :authenticate_user!, only: [:new, :create] 
@@ -70,6 +70,7 @@ class RestaurantsController < ApplicationController
   end
   
   def show
+    @user = current_user
     @reviews = Review.where(restaurant_id: @restaurant) 
     if @reviews.blank?
       @average_rating = 0

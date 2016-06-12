@@ -1,5 +1,7 @@
 class PagesController < ApplicationController
   before_action :set_page, only: [:show, :edit, :update, :destroy]
+  before_action :authenticate_user!, only: [:edit, :update]
+  before_action :admin?, only: [:edit, :update]
 
   # GET /pages
   # GET /pages.json
@@ -14,7 +16,8 @@ class PagesController < ApplicationController
 
   # GET /pages/new
   def new
-    @page = Page.new
+    redirect_to root_path
+    flash[:danger] = "You are not able to access this area."
   end
 
   # GET /pages/1/edit
@@ -23,19 +26,7 @@ class PagesController < ApplicationController
 
   # POST /pages
   # POST /pages.json
-  def create
-    @page = Page.new(page_params)
 
-    respond_to do |format|
-      if @page.save
-        format.html { redirect_to @page, notice: 'Page was successfully created.' }
-        format.json { render :show, status: :created, location: @page }
-      else
-        format.html { render :new }
-        format.json { render json: @page.errors, status: :unprocessable_entity }
-      end
-    end
-  end
 
   # PATCH/PUT /pages/1
   # PATCH/PUT /pages/1.json
@@ -51,17 +42,18 @@ class PagesController < ApplicationController
     end
   end
 
-  # DELETE /pages/1
-  # DELETE /pages/1.json
-  def destroy
-    @page.destroy
-    respond_to do |format|
-      format.html { redirect_to pages_url, notice: 'Page was successfully destroyed.' }
-      format.json { head :no_content }
-    end
-  end
+
 
   private
+  
+  def admin?
+    if !current_user.try(:admin?)
+      flash[:danger] = "You are not authourized to access this resource."
+      redirect_to root_path
+    end
+  end 
+  
+
     # Use callbacks to share common setup or constraints between actions.
     def set_page
       @page = Page.find(params[:id])

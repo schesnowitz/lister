@@ -11,6 +11,8 @@ Rails.application.routes.draw do
   end
 
   root to: 'restaurants#index'
+  
+  
 
    
   

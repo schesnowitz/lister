@@ -203,9 +203,7 @@
         <%= @page.string_15 %>
       </h2>
       <div class="col-xs-12 col-sm-6 col-md-3">
-        <div class="thumbnail wow fadeInUp" data-wow-delay=".1s">
-          <img src="img/team/member1.jpg" alt="">
-          <%= @page.image_1 %>
+          <%= image_tag @page.image_1_url(:pages) if @page.image_2_url(:pages).present? %>
           <div class="caption">
             <h4>
               <%= @page.text_2 %>
@@ -238,15 +236,12 @@
                 <i class="fa fa-github">
                 </i>
               </a>
-            </div>
           </div>
         </div>
       </div>
 
       <div class="col-xs-12 col-sm-6 col-md-3">
-        <div class="thumbnail wow fadeInUp" data-wow-delay=".3s">
-          <img src="img/team/member2.jpg" alt="">
-          <%= @page.image_2 %>
+          <%= image_tag @page.image_2_url(:pages) if @page.image_2_url(:pages).present? %>
           <div class="caption">
             <h4>
               <%= @page.text_4 %>
@@ -279,15 +274,12 @@
                 <i class="fa fa-github">
                 </i>
               </a>
-            </div>
           </div>
         </div>
       </div>
 
       <div class="col-xs-12 col-sm-6 col-md-3">
-        <div class="thumbnail wow fadeInUp" data-wow-delay=".5s">
-          <img src="img/team/member3.jpg" alt="">
-          <%= @page.image_3 %>
+          <%= image_tag @page.image_3_url(:pages) if @page.image_2_url(:pages).present? %>
           <div class="caption">
             <h4>
               <%= @page.text_6 %>
@@ -320,15 +312,12 @@
                 <i class="fa fa-github">
                 </i>
               </a>
-            </div>
           </div>
         </div>
       </div>
 
       <div class="col-xs-12 col-sm-6 col-md-3">
-        <div class="thumbnail wow fadeInUp" data-wow-delay=".7s">
-          <img src="img/team/member4.jpg" alt="">
-          <%= @page.image_4 %>
+<%= image_tag @page.image_4_url(:pages) if @page.image_2_url(:pages).present? %>
           <div class="caption">
             <h4>
               <%= @page.text_8 %>
@@ -361,7 +350,6 @@
                 <i class="fa fa-github">
                 </i>
               </a>
-            </div>
           </div>
         </div>
       </div>
