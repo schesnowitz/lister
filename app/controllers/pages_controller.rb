@@ -6,7 +6,15 @@ class PagesController < ApplicationController
   # GET /pages
   # GET /pages.json
   def index
-    @pages = Page.all
+    @page = Page.find(1)
+  end
+  
+  def about
+    @page = Page.find(2)
+  end
+  
+  def contact 
+    @page = Page.find(3) 
   end
 
   # GET /pages/1

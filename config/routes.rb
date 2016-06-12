@@ -2,6 +2,8 @@ Rails.application.routes.draw do
   
   
   devise_for :users
+  get 'pages/about', controller: 'pages', action: 'about'
+  get 'pages/contact', controller: 'pages', action: 'contact'
   resources :pages
   resources :restaurants do
     resources :reviews, except: [:show, :index]
@@ -11,6 +13,8 @@ Rails.application.routes.draw do
   end
 
   root to: 'restaurants#index'
+  
+
   
   
 
