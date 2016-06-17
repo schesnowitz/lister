@@ -1,5 +1,5 @@
 git add -A
-git commit -m "Routing"
+git commit -m "seeding"
 git push  origin master
 git push heroku master
 
