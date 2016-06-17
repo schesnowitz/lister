@@ -11,7 +11,7 @@ class PagesController < ApplicationController
   
   def about
     @restaurant_1 = Restaurant.find(1)
-    @restaurant_2 = Restaurant.find(4)
+    @restaurant_2 = Restaurant.find(2)
     @restaurant_3 = Restaurant.find(3)
     @page = Page.find(2)
   end
@@ -23,6 +23,9 @@ class PagesController < ApplicationController
   # GET /pages/1
   # GET /pages/1.json
   def show
+      @restaurant_1 = Restaurant.find(1)
+    @restaurant_2 = Restaurant.find(2)
+    @restaurant_3 = Restaurant.find(3)
   end
 
   # GET /pages/new
